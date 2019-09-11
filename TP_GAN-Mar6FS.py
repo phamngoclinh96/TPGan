@@ -261,7 +261,7 @@ class DCGAN(object):
         # self.mark_regression_loss = tf.reduce_mean(tf.square(tf.abs(self.landmarklabels-self.Glandmark)))
         # self.poseloss = tf.reduce_mean(tf.nn.sparse_softmax_cross_entropy_with_logits(self.poselogits, self.poselabels))
         self.idenloss = tf.reduce_mean(
-            tf.nn.sparse_softmax_cross_entropy_with_logits(labels=self.identitylogits, logits=self.idenlabels))
+            tf.nn.sparse_softmax_cross_entropy_with_logits(logits=self.identitylogits, labels=self.idenlabels))
 
         self.eyel_loss = tf.reduce_mean(tf.reduce_sum(tf.reduce_sum(tf.abs(self.c_eyel - self.eyel_label), 1), 1))
         self.eyer_loss = tf.reduce_mean(tf.reduce_sum(tf.reduce_sum(tf.abs(self.c_eyer - self.eyer_label), 1), 1))
