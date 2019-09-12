@@ -98,7 +98,7 @@ ENV/
 /site
 .idea
 *.pyc
-MultiPIE/*
+data/*
 
 # mypy
 .mypy_cache/

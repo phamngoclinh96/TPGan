@@ -51,10 +51,10 @@ class MultiPIE():
     def __init__(self, datasplit='train', Random=True, LOAD_60_LABEL=False, MIRROR_TO_ONE_SIDE=True,
                  RANDOM_VERIFY=False,
                  GENERATE_MASK=False, source='without90', testing=False):
-        self.dir = 'data/FS_aligned/'
+        self.dir = 'data/MultiPIE/'
         self.csvpath = 'data/{}/{}.csv'
-        self.feat5ptDir = 'data/FS_t5pt/'
-        self.test_dir = 'data/testlist/FS/{}.csv'
+        self.feat5ptDir = 'data/PIE_5pt/'
+        self.test_dir = 'data//FS/{}.csv'
         self.testing = testing
 
         self.split = datasplit
