@@ -100,7 +100,7 @@ class DCGAN(object):
         self.batch_size = 10
         self.sample_run_num = 15
         self.testing = False
-        self.testingphase = 'FS'
+        self.testingphase = 'MultiPIE'
         self.testimg = True
         if self.testing:
             # self.batch_size = 10
@@ -122,7 +122,7 @@ class DCGAN(object):
 
         # batch normalization : deals with poor initialization helps gradient flow
         random.seed()
-        self.DeepFacePath = 'data/DeepFace.pickle'
+        self.DeepFacePath = 'model/DeepFace.pickle'
         self.dataset_name = dataset_name
         self.checkpoint_dir = checkpoint_dir
         self.loadDeepFace(self.DeepFacePath)

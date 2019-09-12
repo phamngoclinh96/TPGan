@@ -51,10 +51,10 @@ class MultiPIE():
     def __init__(self, datasplit='train', Random=True, LOAD_60_LABEL=False, MIRROR_TO_ONE_SIDE=True,
                  RANDOM_VERIFY=False,
                  GENERATE_MASK=False, source='without90', testing=False):
-        self.dir = 'data/MultiPIE/'
+        self.dir = 'data/MultiPIE/15/'
         self.csvpath = 'data/{}/{}.csv'
         self.feat5ptDir = 'data/PIE_5pt/'
-        self.test_dir = 'data//FS/{}.csv'
+        self.test_dir = 'data/{}/{}.csv'
         self.testing = testing
 
         self.split = datasplit
@@ -353,7 +353,8 @@ class MultiPIE():
             else:
                 tempath[span[0] + 1:span[0] + 4] = '080'  # -45
         else:
-            tempath[span[0] + 1:span[0] + 4] = '051'
+            # tempath[span[0] + 1:span[0] + 4] = '051'
+            tempath[span[0] + 1:span[0] + 4] = '050'
         labelpath = ''.join(tempath)
         codepath = str(labelpath).replace('cropped', 'code')
         return (codepath, labelpath)
@@ -370,7 +371,7 @@ class MultiPIE():
         # crop four parts
         trans_points = np.empty([5, 2], dtype=np.int32)
         if True:  # not label:
-            featpath = self.feat5ptDir + filename[0:-15] + '_trans.5pt'
+            featpath = 'data-example/201_01_01_010_trans.5pt'  # self.feat5ptDir + filename[0:-15] + '_trans.5pt'
             # print(filename)
             with open(featpath, 'r') as csvfile:
                 reader = csv.reader(csvfile, delimiter=' ')
